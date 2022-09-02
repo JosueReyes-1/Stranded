@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Place,ImgPlace
+from .models import Place,ImgPlace,Category
 # Register your models here.
 
 class ImagenPlaces (admin.TabularInline):
@@ -12,3 +12,4 @@ class PlacesAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Place,PlacesAdmin)
+admin.site.register(Category)
