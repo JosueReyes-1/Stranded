@@ -1,7 +1,7 @@
 from rest_framework import generics
 from django.db.models import Q
 from django.http import JsonResponse
-from places_api.AdditionalFunctions import QueryData
+from places_api.additionalFunctions import QueryData
 from places_api.serializers import PlaceSerializerModel
 from .models import Place,ImgPlace
 
