@@ -19,4 +19,7 @@ class Place(models.Model):
 
 class ImgPlace(models.Model):
     img=models.CharField(max_length=200)
-    place=models.ForeignKey(Place,on_delete=models.CASCADE)
+    place=models.ForeignKey(Place,related_name='images',on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.img
