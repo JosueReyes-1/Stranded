@@ -3,12 +3,12 @@ from itertools import count
 from rest_framework import serializers
 
 from .models import Category, FavoritePlaces, ImgPlace, Place
-
+import json
 
 class CategorySerializerModel(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['name']
+        fields = '__all__'
 
 
 class ImgPlaceSerializerModel(serializers.ModelSerializer):
@@ -24,8 +24,9 @@ class FavoritePlaceSerializarModel(serializers.ModelSerializer):
 class PlaceSerializerModel(serializers.ModelSerializer):
     category=CategorySerializerModel()
     images=ImgPlaceSerializerModel(many=True)
-    fav=FavoritePlaceSerializarModel(many=True)
+    fav=FavoritePlaces.objects.all().count()
+    json.dumps(fav)
+
     class Meta:
         model= Place
         fields = ('name','description','category','country','state','city','images','fav')
-
