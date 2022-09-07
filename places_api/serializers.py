@@ -1,5 +1,5 @@
 
-from itertools import count
+
 from rest_framework import serializers
 
 from .models import Category, FavoritePlaces, ImgPlace, Place
@@ -16,17 +16,19 @@ class ImgPlaceSerializerModel(serializers.ModelSerializer):
         model = ImgPlace
         fields = ['img']
 
-class FavoritePlaceSerializarModel(serializers.ModelSerializer):
-    class Meta:
-        model = FavoritePlaces
-        fields= ['status']
-
 class PlaceSerializerModel(serializers.ModelSerializer):
     category=CategorySerializerModel()
     images=ImgPlaceSerializerModel(many=True)
-    fav=FavoritePlaces.objects.all().count()
-    json.dumps(fav)
-
+    
     class Meta:
         model= Place
-        fields = ('name','description','category','country','state','city','images','fav')
+        fields = ('name','description','category','country','state','city','images')
+
+
+
+class FavoritePlaceSerializarModel(serializers.ModelSerializer):
+    place = PlaceSerializerModel()
+ 
+    class Meta:
+        model = FavoritePlaces
+        fields= 'place'
