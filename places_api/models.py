@@ -29,5 +29,5 @@ class ImgPlace(models.Model):
 
 class FavoritePlaces(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
-    place=models.ForeignKey(Place,related_name='fav',on_delete=models.CASCADE)
-    status=models.BooleanField()
+    place=models.ForeignKey(Place,related_name='place',on_delete=models.CASCADE)
+    status=models.BooleanField(default=True)
