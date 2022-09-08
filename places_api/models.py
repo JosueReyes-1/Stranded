@@ -15,9 +15,12 @@ class Place(models.Model):
     name=models.CharField(max_length=50)
     description=models.CharField(max_length=100)
     category=models.ForeignKey(Category,on_delete=models.CASCADE,null=True)
+    latitude=models.CharField(max_length=50,null=True)
+    longitude=models.CharField(max_length=50,null=True)
     country=models.CharField(max_length=30) 
     state=models.CharField(max_length=20)
     city=models.CharField(max_length=20)
+    address=models.CharField(max_length=60,null=True)
 
 class ImgPlace(models.Model):
 
