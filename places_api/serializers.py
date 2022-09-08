@@ -22,7 +22,7 @@ class PlaceSerializerModel(serializers.ModelSerializer):
     
     class Meta:
         model= Place
-        fields = ('name','description','category','country','state','city','images')
+        fields = ('name','description','category','country','state','city','address','latitude','longitude','images')
 
 
 
