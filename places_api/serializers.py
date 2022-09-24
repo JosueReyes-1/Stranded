@@ -3,7 +3,7 @@
 from rest_framework import serializers
 
 from .models import Category, FavoritePlaces, ImgPlace, Place
-import json
+
 
 class CategorySerializerModel(serializers.ModelSerializer):
     class Meta:

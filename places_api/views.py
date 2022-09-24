@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from places_api.serializers import PlaceSerializerModel
-from .models import FavoritePlaces, Place,ImgPlace
+from .models import Place,ImgPlace
 from rest_framework.filters import SearchFilter,OrderingFilter
 from rest_framework.generics import ListAPIView
 
